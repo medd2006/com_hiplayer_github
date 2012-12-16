@@ -36,16 +36,17 @@ class HiplayerModelHiplayer extends JModelList
 	{
 		$query = parent::getListQuery();
 
-		$query->select('*');
-		$query->from('#__hiplayer');
+		$query->select('p.*, c.categorie_name');
+		$query->from('#__hiplayer AS p');
+		$query->join('LEFT', '#__hicategorie AS c ON p.categorie_id = c.categorie_id');
 		
 		$published = $this->getState('filter.published');
 
 		if ($published == '') {
-			$query->where('(published = 1 OR published = 0)');
+			$query->where('(p.published = 1 OR p.published = 0)');
 		} else if ($published != '*') {
 			$published = (int) $published;
-			$query->where("published = '{$published}'");
+			$query->where("p.published = '{$published}'");
 		}
 		
 		$search = $this->getState('filter.search');
