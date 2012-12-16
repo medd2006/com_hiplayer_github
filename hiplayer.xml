@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+ 
+        <name>Hiplayer</name>
+        <!-- The following elements are optional and free of formatting constraints -->
+        <creationDate>Decembre 2012</creationDate>
+        <author>MADOUI Mohamed</author>
+        <authorEmail>contact@madouidesign.com</authorEmail>
+        <authorUrl>http://www.madouidesign.om</authorUrl>
+        <copyright>Copyright Info</copyright>
+        <license>License Info</license>
+        <!--  The version string is recorded in the components table -->
+        <version>0.0.4</version>
+        <!-- The description is optional and defaults to the name -->
+        <description>Hiplayer est un composent pour céer une galerie audio, ce composent a ete créer par moi memei pour le developement d'une galerie audio pour le site de l'imam Hassan Iquioussen</description>
+		
+ 
+        <install> <!-- Runs on install -->
+		                <sql>
+		                        <file driver="mysql" charset="utf8">sql/install_hiplayer_0.0.1.sql</file>
+		                </sql>
+		        </install>
+		        <uninstall> <!-- Runs on uninstall -->
+		                <sql>
+		                        <file driver="mysql" charset="utf8">sql/uninstall_hiplayer_0.0.1.sql</file>
+		                </sql>
+		        </uninstall>
+        <update> <!-- Runs on update; New in 2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql</schemapath>
+                </schemas>
+        </update>
+ 		
+		
+        <!-- Site Main File Copy Section -->
+        <!-- Note the folder attribute: This attribute describes the folder
+                to copy FROM in the package to install therefore files copied
+                in this section are copied from /site/ in the package -->
+         <files folder="site">
+			         <filename>index.html</filename>
+			         <filename>hiplayer.php</filename>
+				     <filename>controller.php</filename>
+					 <folder>models</folder>
+					 <folder>views</folder>
+					<folder>language</folder>
+
+		</files>
+		<media destination="com_hiplayer" folder="media">
+	                <filename>index.html</filename>
+	                <folder>build</folder>
+	    </media>
+ 
+        <administration>
+                <!-- Administration Menu Section -->
+                <menu >COM_HIPLAYER</menu>
+                <submenu>
+					<menu link="option=com_hiplayer&amp;view=hiplayer" alt="COM_HIPLAYER_AUDIO">COM_HIPLAYER_AUDIO</menu>
+					<menu link="option=com_hiplayer&amp;view=hicategorie" alt="COM_HIPLAYER_CATEGORIE">COM_HIPLAYER_CATEGORIE</menu>
+				</submenu>                
+				<files folder="admin">
+                        <!-- Admin Main File Copy Section -->
+                        <filename>index.html</filename>
+                        <filename>hiplayer.php</filename>
+						<filename>controller.php</filename>
+						<filename>config.xml</filename>
+						<filename>hiplayer.xml</filename>
+						<folder>controllers</folder>
+						<folder>models</folder>
+						<folder>tables</folder>
+						<folder>views</folder>
+						<folder>sql</folder>
+                </files>
+				
+				<languages folder="admin">
+			    	<language tag="fr-FR">language/fr-FR/fr-FR.com_hiplayer.ini</language>
+				    <language tag="fr-FR">language/fr-FR/fr-FR.com_hiplayer.sys.ini</language>
+				</languages>
+        </administration>
+ 
+</extension>

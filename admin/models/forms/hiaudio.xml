@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="audio_id"
+			type="hidden"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+			size="10"
+			default="0"
+			readonly="true"
+			class="readonly"
+		/>
+
+		<field name="audio_name"
+			type="text"
+			label="COM_HIPLAYER_FIELD_AUDIO_NAME_LABEL"
+			description="COM_HIPLAYER_FIELD_AUDIO_NAME_DESC"
+			class="inputbox"
+			size="30"
+			required="true"
+		/>
+
+		<field name="audio_alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			size="30"
+			required="false"
+		 />
+		 
+		 <field name="audio_description"
+			type="textarea"
+			label="JFIELD_DESCRIPTION_LABEL"
+			description="JFIELD_DESCRIPTION_DESC"
+			class="inputbox"
+			size="50"
+			required="true"
+		 />
+		 
+		 <field name="categorie_id"
+			type="list"
+			label="JFIELD_CATEGORIE_LABEL"
+			description="JFIELD_CATEGORIE_DESC"
+			class="inputbox"
+			filter="intval"
+			size="1"
+			default="1"
+		>
+			<option value="1">Conférance</option>
+			<option value="2">Coures</option>
+			<option value="3">Preche du vendredi</option>
+			<option value="4">Hisoitres</option>
+		</field>
+
+		<field name="published"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			filter="intval"
+			size="1"
+			default="1"
+		>
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>
+		</field>
+
+		<field name="audio_path"
+			type="media"
+			label="COM_HIPLAYER_FIELD_AUDIO_PHOTO_LABEL"
+			description="COM_HIPLAYER_FIELD_AUDIO_PHOTO_DESC"
+			required="false"
+			directory="media"
+		/>
+
+	</fieldset>
+</form>
