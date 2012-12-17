@@ -4,7 +4,8 @@ defined( '_JEXEC' ) or die;
 $document = JFactory::getDocument();
 $document->addScript(JURI::base() . 'media/com_hiplayer/build/jquery-1.8.3.min.js');
 $document->addScript(JURI::base() . 'media/com_hiplayer/build/mediaelement-and-player.min.js');
-$document->addScript(JURI::base() . 'media/com_explore/js/jquery-noconflict.js');
+$document->addScript(JURI::base() . 'media/com_hiplayer/js/jquery-noconflict.js');
+$document->addScript(JURI::base() . 'media/com_hiplayer/js/audio_favorite.js');
 $document->addStyleSheet(JURI::base() . 'media/com_hiplayer/build/mediaelementplayer.min.css');
 $document->addStyleSheet(JURI::base() . 'media/com_hiplayer/css/favoris.css');
 
