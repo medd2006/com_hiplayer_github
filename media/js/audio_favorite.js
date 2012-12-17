@@ -1,10 +1,10 @@
 jQuery(document).ready(function() {
-	jQuery('#tour_favorite').click(function() {
+	jQuery('#audio_favorite').click(function() {
 		if (jQuery(this).attr('rel') == 'no') {
-			jQuery('#tour_favorite').removeClass('favorite_inactive')
+			jQuery('#audio_favorite').removeClass('favorite_inactive')
 			.addClass('favorite_active').attr('rel', 'yes');
 		} else {
-			jQuery('#tour_favorite').removeClass('favorite_active')
+			jQuery('#audio_favorite').removeClass('favorite_active')
 			.addClass('favorite_inactive').attr('rel', 'no');
 		};
 	});
