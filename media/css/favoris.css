@@ -1,0 +1,15 @@
+#audio_favorite {
+	font-size: 2em;
+	padding-right: 5px;
+	cursor: pointer;
+	text-shadow: 0.05em 0.05em 0.05em #222;
+	display: inline-block;
+}
+
+.favorite_inactive {
+	color: #DDD;
+}
+
+.favorite_active {
+	color: #FC3;
+}
